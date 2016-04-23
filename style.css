@@ -128,6 +128,8 @@ header {
     margin: 0.5%;
     display: inline-block;
     border: 5px solid black;
+    transition-duration: 1.25s;
+    transform-style: preserve-3d;
 }
 
 .flip-card  {
@@ -137,10 +139,6 @@ header {
 .front, .back {
     backface-visibility: hidden;
 }
-
-/*.front {*/
-    /*transform: rotate3D(0,1,0, 180deg);*/
-/*}*/
 
 .back {
     height: 100%;

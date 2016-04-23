@@ -3,18 +3,19 @@ var second_card_clicked = null;
 var canClick = true;
 var total_possible_matches = 2;
 var match_counter = 0;
+var card_flip_timer = null;
 
 
 //function to show back of cards when first and second cards don't match
-function showBack(first, second) {
-    canClick = false;
-    card_flip_timer = setTimeout(function() {
-        card_flip_timer = null;
-        first.removeClass('flip-card');
-        second.removeClass('flip-card');
-        canClick = true;
-    }, 1250);
-}
+// function showBack(first, second) {
+//     canClick = false;
+//     card_flip_timer = setTimeout(function() {
+//         card_flip_timer = null;
+//         first.removeClass('flip-card');
+//         second.removeClass('flip-card');
+//         canClick = true;
+//     }, 1250);
+// }
 
 //function to reset first and second cards after flipped
 function reset_card() {
@@ -48,7 +49,6 @@ function card_clicked() {
         $(this).find('.front').show();
         $(this).find('.back').hide();
 
-
         //if first card hasn't been flipped, set this one to first card
         if(first_card_clicked == null) {
             first_card_clicked = this;
@@ -58,8 +58,8 @@ function card_clicked() {
 
             //compares two images' sources are the same
             //if they are the same
-            var first_img = first_card_clicked.find('.front img').attr('src');
-            var second_img = second_card_clicked.find('.front img').attr('src');
+            var first_img = $(first_card_clicked).find('.front img').attr('src');
+            var second_img = $(second_card_clicked).find('.front img').attr('src');
 
             if(first_img == second_img) {
                 match_counter++;
@@ -75,16 +75,16 @@ function card_clicked() {
             } else {
                 canClick = false;
                 card_flip_timer = setTimeout(function() {
-                    console.log('test - 1st card = ',first_card, "2nd card = ", second_card);
-                    $(first_card).removeClass('flip-card');
-                    $(second_card).removeClass('flip-card');
+                    console.log('test - 1st card = ',first_card_clicked, "2nd card = ", second_card_clicked);
                     card_flip_timer = null;
+                    $(first_card_clicked).find('.back').show();
+                    $(second_card_clicked).find('.back').show();
                     canClick = true;
-                    resetCards();
+                    reset_card();
                 }, 1500);
             }
         }
-        }
+    }
 }
 
 $(document).ready(function() {
