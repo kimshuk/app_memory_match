@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    font-family: "Arial", serif;
+    width: 100vw;
+    background: url(images/pokemon_stadium/stadium.png) no-repeat center fixed;
+    background-size: cover;
+}
+
+#header_container {
+    position: relative;
+}
+
+header {
+    background: url(images/logo.png) no-repeat;
+    background-position: 50% 35%;
+    background-size: 21%;
+    width: 100%;
+    height: 27vh;
+    position: relative;
+    top: -1vh;
+}
+
+#header_container {
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+}
+
+.game_title {
+    color: #FFCE00;
+    display: inline-block;
+    left: 2%;
+    text-shadow: 3px 3px #17427B;
+    top: 12vh;
+    position: relative;
+}
+
+.setting_link {
+    list-style-type: none;
+    position: relative;
+    text-align: center;
+    top: 11vh;
+}
+
+.link_list li {
+    display: inline-block;
+    padding-right: 10%;
+}
+
+.link_list li a {
+    color: #DD0000;
+    text-decoration: none;
+    text-shadow: 3px 3px #17427B;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.main_wrapper {
+    width: 1200px;
+    display: flex;
+    margin: auto;
+}
+
+#stats {
+    float: left;
+}
+
+.stats_container {
+    border: 5px solid black;
+    background-color: #153166;
+    height: 31vh;
+    width: 17vw;
+    top: 6vh;
+    left: 50%;
+    position: relative;
+    text-align: center;
+}
+
+.stats_header {
+    text-align: center;
+    color: #ED1919;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 10% 0 0;
+}
+
+.stats_list {
+    list-style-type: none;
+    font-size: 20px;
+    padding: 0;
+    margin-bottom: 10%;
+    position: relative;
+}
+
+.value {
+    color: #FFFFFF;
+}
+
+.reset {
+    right: 50%;
+    transform: translateX(63%);
+    width: 80%;
+    position: relative;
+    background-color: #ED1919;
+    font-size: 10px;
+    color: #FFFFFF;
+    border-radius: 8%;
+}
+
+.stats_list li {
+    padding-bottom: 1%;
+    text-align: center;
+}
+
+.game_area {
+    position: relative;
+    float: left;
+    left: 3%;
+    width: 60vw;
+    height: 53vh;
+    text-align: center;
+    top: 5vh;
+    box-sizing: border-box;
+}
+
+.card {
+    max-width: 13%;
+    height: 27%;
+    position: relative;
+    border-radius: 5%;
+    margin: 0.5%;
+    display: inline-block;
+    border: 5px solid black;
+    transition-duration: 1.25s;
+    transform-style: preserve-3d;
+}
+
+.flip-card  {
+    transform: rotate3D(0,1,0,180deg);
+}
+
+.front, .back {
+    backface-visibility: hidden;
+}
+
+.back {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.front {
+    transform: rotate3D(0, 1, 0, 180deg);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+}
