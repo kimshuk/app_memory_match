@@ -11,4 +11,4 @@ A memory match card game where the player has to correctly match nine pairs of r
 - [ ] **Health Bar** - Decrement health every time user wrongly guesses. Player loses if health is depleted.
 - [ ] **Timed Game** - Player can choose a timed game and the player can lose if time runs out before all cards are matched.
 
-###[LIVE DEMO](jeesookim.com/app_memory_match)
+###[LIVE DEMO](http://jeesookim.com/app_memory_match/)
