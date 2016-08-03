@@ -6,23 +6,19 @@ body {
     background-size: cover;
 }
 
-#header_container {
-    position: relative;
-}
-
 header {
-    background: url(images/logo.png) no-repeat;
-    background-position: 50% 36%;
-    background-size: 21%;
+    background: url(images/logo_metalic.png) no-repeat;
+    background-position: 50% 66%;
+    background-size: 46%;
     width: 100%;
-    height: 22vh;
+    height: 28vh;
     position: relative;
 }
 
 #header_container {
     left: 50%;
     transform: translate(-50%,-50%);
-    position: absolute;
+    position: relative;
     top: 50%;
 }
 
@@ -56,14 +52,15 @@ header {
 
 .main_wrapper {
     width: 100%;
-    display: flex;
-    margin: auto;
+    position: relative;
+    height: 60vh;
 }
 
 #stats {
     float: left;
     position: relative;
     left: 3%;
+    top: 1vh;
 }
 
 .stats_container {
@@ -71,9 +68,6 @@ header {
     background-color: #153166;
     height: 55vh;
     width: 17vw;
-    top: 6vh;
-    /* left: 50%; */
-    position: relative;
     text-align: center;
 }
 
@@ -154,13 +148,13 @@ header {
     float: left;
     left: 6%;
     width: 75%;
-    top: 5vh;
+    /* top: 5vh; */
     box-sizing: border-box;
 }
 
 .card {
     max-width: 15%;
-    height: 39%;
+    height: 21vh;
     position: relative;
     border-radius: 5%;
     margin: 0.5%;
