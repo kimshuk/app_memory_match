@@ -40,7 +40,7 @@ function card() {
             $(second_card_clicked).toggleClass('flip-card');
             card.canClick = true;
             card.reset_card();
-        }, 1500);
+        }, 1000);
     };
 
     //click function for card
@@ -95,9 +95,6 @@ function card() {
 
             //card is not clicked. so flip over, show the front side
             $(the_card).addClass('flip-card');
-            console.log("hellow andrew");
-            // $(this).find('.back').hide();
-            // $(this).find('.front').show();
 
             //if first card hasn't been flipped, set scope one to first card
             if (first_card_clicked == null) {
@@ -121,10 +118,11 @@ function card() {
                     if (game.match_counter == game.total_possible_matches) {
                         game.victory_modal();
                         console.log("matched all");
-                    } else {
-                        return;
                     }
                 } else {
+                    //calculate accuracy
+                    game.stat_accuracy();
+                    //flip back cards
                     card.showBack();
                 }
                 //refresh stats after every attempt

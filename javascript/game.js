@@ -1,4 +1,5 @@
 function game() {
+    var self = this;
     this.total_cards = 18;
     this.total_possible_matches = this.total_cards / 2;
     this.match_counter = 0;
@@ -9,7 +10,7 @@ function game() {
 
     //calculate accuracy percentage
     this.stat_accuracy = function () {
-        game.accuracy = Math.round((game.match_counter / game.attempts) * 100);
+        self.accuracy = Math.round((self.match_counter / self.attempts) * 100);
     };
 
     //initiate game {randomize cards, card click function}
@@ -23,28 +24,28 @@ function game() {
     this.reset = function () {
         $('#victory_modal').fadeOut();
         $('.card').remove();
-        game.games_played++;
+        self.games_played++;
         card.canClick = true;
         card.card_flip_timer = null;
-        game.match_counter = 0;
+        self.match_counter = 0;
         card.reset_card();
-        game.reset_stats();      //set game stat to 0
-        game.init();
+        self.reset_stats();      //set game stat to 0
+        self.init();
     };
 
     //function to reset stats
     this.reset_stats = function () {
-        game.accuracy = 0;
-        game.matches = 0;
-        game.attempts = 0;
-        game.display_stats();
+        self.accuracy = 0;
+        self.matches = 0;
+        self.attempts = 0;
+        self.display_stats();
     };
 
     //function to display all stats (games played, attempts, accuracy)
     this.display_stats = function () {
-        $('.games_played .value').text(game.games_played);
-        $('.attempts .value').text(game.attempts);
-        $('.accuracy .value').text(game.accuracy + "%");
+        $('.games_played .value').text(self.games_played);
+        $('.attempts .value').text(self.attempts);
+        $('.accuracy .value').text(self.accuracy + "%");
     };
 
     // when the player wins, victory video modal popup
