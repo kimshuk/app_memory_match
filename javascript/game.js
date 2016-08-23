@@ -1,7 +1,8 @@
 function game() {
     var self = this;
     this.total_cards = 18;
-    this.total_possible_matches = this.total_cards / 2;
+    // this.total_possible_matches = this.total_cards / 2;
+    this.total_possible_matches = 2;
     this.match_counter = 0;
     this.matches = 0;
     this.attempts = 0;
@@ -24,6 +25,7 @@ function game() {
     this.reset = function () {
         $('#victory_modal').fadeOut();
         $('.card').remove();
+        $('#victory_music').trigger('pause');
         self.games_played++;
         card.canClick = true;
         card.card_flip_timer = null;
@@ -74,5 +76,28 @@ function game() {
                 info_modal.modal('toggle');
             }
         });
+    };
+    // win condition
+    this.win_condition = function () {
+        self.pause_music();
+        self.victory_music();
+        self.victory_modal();
+    };
+
+    
+    // Play Music
+    this.play_music = function () {
+        $('#game_music').trigger('play');
+        $('#music').hide();
+        $('#pause_music').show();
+    };
+    this.pause_music = function () {
+        $('#game_music').trigger('pause');
+        $('#pause_music').hide();
+        $('#music').show();
+    };
+    this.victory_music = function () {
+        $('#victory_music').trigger('play');
     }
+    
 }

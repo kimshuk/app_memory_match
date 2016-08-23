@@ -161,6 +161,8 @@ header {
     display: inline-block;
     transition-duration: 1.25s;
     transform-style: preserve-3d;
+    z-index: 1;
+
 }
 
 .flip-card  {
@@ -176,6 +178,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 1;
 }
 
 .front {
@@ -190,3 +193,44 @@ header {
     height: 100%;
     border-radius: 5%;
 }
+
+.poke_catch {
+    top: 7vh;
+    position: absolute;
+    height: 10vh;
+    width: 10vh;
+    z-index: 2000;
+    background-image:url(images/pokemon_ball/poke.png);
+    background-size:contain;
+    background-repeat:no-repeat;
+    transform: scale(1.5);
+}
+
+.poke_catch img {
+    width: 100%;
+}
+
+.poke_wobble {
+    -webkit-animation: example 1.7s infinite; /* Chrome, Safari, Opera */
+    animation: pokeball 1.7s infinite;
+}
+
+@keyframes pokeball {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.capture_animation {
+    transform-origin: 15% 15%;
+    transition-duration: 1.5s;
+    transform: scale(0.01);
+}
+
+
+
