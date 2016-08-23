@@ -23,7 +23,7 @@ function card() {
         var origin = {top: '-20px', left: '-20px'};
         var parent_width = $(".game_area").width();
         var destination = $(the_card).position();
-        destination.top = destination.top + 'px';
+        destination.top = (destination.top+15) + 'px';
         destination.left = destination.left + 'px';
 
         pokeball.css(origin);
@@ -33,10 +33,6 @@ function card() {
             }
         );
 
-        // function end_animation() {
-        //     $(the_card).css('visibility', 'hidden');
-        //     pokeball.remove();
-        // }
         setTimeout(function () {
             $(the_card).css('visibility', 'hidden');
             pokeball.remove();
