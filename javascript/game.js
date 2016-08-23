@@ -1,8 +1,7 @@
 function game() {
     var self = this;
     this.total_cards = 18;
-    // this.total_possible_matches = this.total_cards / 2;
-    this.total_possible_matches = 2;
+    this.total_possible_matches = this.total_cards / 2;
     this.match_counter = 0;
     this.matches = 0;
     this.attempts = 0;
