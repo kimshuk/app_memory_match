@@ -4,6 +4,7 @@
 
 A memory match card game where the player has to correctly match nine pairs of randomly generated cards. 
 
+I used: HTML, CSS, Javascript, jQuery
 
 ### Features I Want to Implement in Future Iterations
 - [x] **Themes**
